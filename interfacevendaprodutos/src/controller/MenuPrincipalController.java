@@ -55,6 +55,17 @@ public class MenuPrincipalController implements Initializable {
         stage.showAndWait();
 //        carregarTableViewProdutos();
     }
+
+    public void tratarBotaoProduto(ActionEvent event) throws IOException {
+//        produtoSelecionado = null;
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelMenuProduto.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(MenuPrincipal.getScene().getWindow());
+        stage.showAndWait();
+//        carregarTableViewProdutos();
+    }
     
 //    @FXML
 //    public void tratarBotaoCliente(ActionEvent event) throws IOException {
