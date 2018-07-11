@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="painelFormularioProduto" prefHeight="274.0" prefWidth="324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelFormularioProdutoController">
+   <children>
+      <Label layoutX="42.0" layoutY="76.0" text="Código:" />
+      <Label layoutX="42.0" layoutY="110.0" text="Produto:" />
+      <Label layoutX="42.0" layoutY="148.0" text="Preço:" />
+      <ToolBar prefHeight="40.0" prefWidth="322.0">
+         <items>
+            <Label text="CADASTRO DE PRODUTO" />
+         </items>
+      </ToolBar>
+      <TextField fx:id="textFieldCod" layoutX="114.0" layoutY="71.0" />
+      <TextField fx:id="textFieldNome" layoutX="114.0" layoutY="107.0" />
+      <TextField fx:id="textFieldPreco" layoutX="114.0" layoutY="143.0" />
+      <Button layoutX="63.0" layoutY="208.0" mnemonicParsing="false" onAction="#tratarBotaoSalvar" prefHeight="27.0" prefWidth="88.0" text="SALVAR" />
+      <Button layoutX="174.0" layoutY="208.0" mnemonicParsing="false" onAction="#tratarBotaoCancelar" text="CANCELAR" />
+   </children>
+</AnchorPane>

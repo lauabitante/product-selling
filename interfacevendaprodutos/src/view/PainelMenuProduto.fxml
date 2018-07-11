@@ -6,23 +6,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.PainelMenuProdutoController">
-   <children>
-      <ToolBar prefHeight="40.0" prefWidth="600.0">
-        <items>
-          <Button mnemonicParsing="false" text="Novo" />
-            <Button mnemonicParsing="false" text="Editar" />
-            <Button mnemonicParsing="false" text="Excluir" />
-            <Button mnemonicParsing="false" text="Fechar" />
-        </items>
-      </ToolBar>
-      <TableView layoutY="39.0" prefHeight="361.0" prefWidth="600.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Código" />
-          <TableColumn prefWidth="75.0" text="Produto" />
-            <TableColumn prefWidth="75.0" text="Preço" />
-        </columns>
-      </TableView>
-   </children>
+<AnchorPane id="AnchorPane" fx:id="MenuProduto" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelMenuProdutoController">
+    <children>
+        <ToolBar prefHeight="40.0" prefWidth="600.0">
+            <items>
+                <Button mnemonicParsing="false" onAction="#goToFormularioProduto" text="Novo" />
+                <Button mnemonicParsing="false" onAction="#goToFormularioProduto" text="Editar" />
+                <Button mnemonicParsing="false" onAction="#tratarBotaoExcluir" text="Excluir" />
+                <Button mnemonicParsing="false" onAction="#goToMenuPrincipal" text="Fechar" />
+            </items>
+        </ToolBar>
+        <TableView fx:id="tableViewProdutos" layoutY="39.0" prefHeight="361.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="tableColumnCod" prefWidth="75.0" text="Código" />
+                <TableColumn fx:id="tableColumnNome" prefWidth="75.0" text="Produto" />
+                <TableColumn fx:id="tableColumnPreco" prefWidth="75.0" text="Preço" />
+            </columns>
+        </TableView>
+    </children>
 </AnchorPane>
