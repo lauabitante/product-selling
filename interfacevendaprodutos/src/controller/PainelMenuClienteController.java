@@ -48,9 +48,47 @@ public class PainelMenuClienteController implements Initializable {
     }
     
     @FXML
+    public void goToDepositoCliente(ActionEvent event) throws IOException {
+       //        produtoSelecionado = null;
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelDepositoCliente.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(painelMenuCliente.getScene().getWindow());
+        stage.showAndWait();
+//        carregarTableViewProdutos();
+    }
+    
+     @FXML
+    public void goToTransferenciaCliente(ActionEvent event) throws IOException {
+       //        produtoSelecionado = null;
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelTransferenciaCliente.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(painelMenuCliente.getScene().getWindow());
+        stage.showAndWait();
+//        carregarTableViewProdutos();
+    }
+    
+    @FXML
+    public void goToConsultarSaldo(ActionEvent event) throws IOException {
+       //        produtoSelecionado = null;
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelSaldoCliente.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(painelMenuCliente.getScene().getWindow());
+        stage.showAndWait();
+//        carregarTableViewProdutos();
+    }
+
+    @FXML
     public void goToMenuPrincipal(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelMenuCliente.getScene().getWindow();
         stage.close();
     }
+    
+    
     
 }

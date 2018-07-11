@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="painelDepositoCliente" prefHeight="318.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelDepositoClienteController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="355.0">
+         <items>
+            <Label text="DEPÓSITO" />
+         </items>
+      </ToolBar>
+      <Label layoutX="91.0" layoutY="83.0" text="Digite o valor para depósito:" />
+      <TextField fx:id="textFieldValor" layoutX="94.0" layoutY="118.0" />
+      <Button layoutX="132.0" layoutY="171.0" mnemonicParsing="false" onAction="#tratarBotaoDepositar" text="DEPOSITAR" />
+      <Button layoutX="132.0" layoutY="209.0" mnemonicParsing="false" onAction="#tratarBotaoCancelar" prefHeight="27.0" prefWidth="91.0" text="CANCELAR" />
+   </children>
+</AnchorPane>

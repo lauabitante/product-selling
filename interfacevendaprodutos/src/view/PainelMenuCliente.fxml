@@ -12,9 +12,9 @@
         <items>
           <Button mnemonicParsing="false" onAction="#goToFormularioCliente" text="Novo" />
             <Button mnemonicParsing="false" onAction="#goToFormularioCliente" text="Editar" />
-            <Button mnemonicParsing="false" text="Depositar" />
-            <Button mnemonicParsing="false" text="Transferir" />
-            <Button mnemonicParsing="false" text="Consultar saldo" />
+            <Button mnemonicParsing="false" onAction="#goToDepositoCliente" text="Depositar" />
+            <Button mnemonicParsing="false" onAction="#goToTransferenciaCliente" text="Transferir" />
+            <Button mnemonicParsing="false" onAction="#goToConsultarSaldo" text="Consultar saldo" />
             <Button mnemonicParsing="false" text="Excluir" />
             <Button mnemonicParsing="false" onAction="#goToMenuPrincipal" text="Fechar" />
         </items>

@@ -6,23 +6,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" fx:id="painelFormularioCliente" prefHeight="293.0" prefWidth="290.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.PainelFormularioClienteController">
+<AnchorPane id="AnchorPane" fx:id="painelFormularioCliente" prefHeight="300.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelFormularioClienteController">
    <children>
-      <ToolBar prefHeight="40.0" prefWidth="290.0">
+      <ToolBar prefHeight="40.0" prefWidth="374.0">
          <items>
             <Label text="CADASTRO DE CLIENTES" />
          </items>
       </ToolBar>
-      <Label layoutX="19.0" layoutY="76.0" text="Nome:" />
-      <Label layoutX="20.0" layoutY="109.0" text="CPF:" />
-      <Label layoutX="20.0" layoutY="141.0" text="Email:" />
-      <Label layoutX="21.0" layoutY="175.0" text="Conta:" />
-      <TextField fx:id="textFieldNome" layoutX="79.0" layoutY="71.0" />
-      <TextField fx:id="textFieldCPF" layoutX="79.0" layoutY="104.0" />
-      <TextField fx:id="textFieldEmail" layoutX="79.0" layoutY="136.0" />
-      <TextField fx:id="textFieldConta" layoutX="79.0" layoutY="170.0" />
-      <Button layoutX="40.0" layoutY="229.0" mnemonicParsing="false" onAction="#tratarBotaoSalvar" prefHeight="27.0" prefWidth="88.0" text="SALVAR" />
-      <Button layoutX="163.0" layoutY="229.0" mnemonicParsing="false" onAction="#tratarBotaoCancelar" text="CANCELAR" />
+      <Label layoutX="71.0" layoutY="75.0" text="Nome:" />
+      <Label layoutX="72.0" layoutY="108.0" text="CPF:" />
+      <Label layoutX="72.0" layoutY="140.0" text="Email:" />
+      <Label layoutX="73.0" layoutY="174.0" text="Conta:" />
+      <TextField fx:id="textFieldNome" layoutX="131.0" layoutY="70.0" />
+      <TextField fx:id="textFieldCPF" layoutX="131.0" layoutY="103.0" />
+      <TextField fx:id="textFieldEmail" layoutX="131.0" layoutY="135.0" />
+      <TextField fx:id="textFieldConta" layoutX="131.0" layoutY="169.0" />
+      <Button layoutX="82.0" layoutY="229.0" mnemonicParsing="false" onAction="#tratarBotaoSalvar" prefHeight="27.0" prefWidth="88.0" text="SALVAR" />
+      <Button layoutX="205.0" layoutY="229.0" mnemonicParsing="false" onAction="#tratarBotaoCancelar" text="CANCELAR" />
    </children>
 </AnchorPane>

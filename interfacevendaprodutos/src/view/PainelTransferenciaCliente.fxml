@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="painelTransferenciaCliente" prefHeight="275.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelTransferenciaClienteController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="363.0">
+         <items>
+            <Label text="Transferência" />
+         </items>
+      </ToolBar>
+      <Label layoutX="38.0" layoutY="93.0" text="Cliente Destino:" />
+      <Label layoutX="38.0" layoutY="124.0" text="Valor:" />
+      <TextField fx:id="textFieldClienteDestino" layoutX="159.0" layoutY="88.0" />
+      <TextField fx:id="textFieldValor" layoutX="159.0" layoutY="119.0" />
+      <Button layoutX="73.0" layoutY="188.0" mnemonicParsing="false" onAction="#tratarBotaoTransferir" text="TRANSFERIR" />
+      <Button layoutX="192.0" layoutY="188.0" mnemonicParsing="false" onAction="#tratarBotaoCancelar" prefHeight="27.0" prefWidth="98.0" text="CANCELAR" />
+   </children>
+</AnchorPane>
