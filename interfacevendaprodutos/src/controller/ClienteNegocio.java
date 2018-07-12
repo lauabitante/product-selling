@@ -18,7 +18,7 @@ import model.Conta;
  *
  * @author lauraabitante
  */
-public class ClienteController {
+public class ClienteNegocio {
 
     private DecimalFormat df = new DecimalFormat("0.##");    
     private ClienteDAO clienteDAO = new ClienteDAO_BD();

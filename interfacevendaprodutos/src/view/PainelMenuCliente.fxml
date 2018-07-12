@@ -19,13 +19,13 @@
             <Button mnemonicParsing="false" onAction="#goToMenuPrincipal" text="Fechar" />
         </items>
       </ToolBar>
-      <TableView layoutY="40.0" prefHeight="361.0" prefWidth="600.0">
+      <TableView fx:id="tableViewClientes" layoutY="40.0" prefHeight="361.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Código" />
-          <TableColumn prefWidth="75.0" text="Nome" />
-            <TableColumn prefWidth="75.0" text="CPF" />
-            <TableColumn prefWidth="75.0" text="Email" />
-            <TableColumn prefWidth="75.0" text="Conta" />
+          <TableColumn fx:id="tableColumnCod" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="tableColumnCPF" prefWidth="75.0" text="CPF" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="tableColumnConta" prefWidth="75.0" text="Conta" />
         </columns>
       </TableView>
    </children>
