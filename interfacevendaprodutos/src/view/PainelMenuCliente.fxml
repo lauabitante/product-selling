@@ -15,7 +15,7 @@
             <Button mnemonicParsing="false" onAction="#goToDepositoCliente" text="Depositar" />
             <Button mnemonicParsing="false" onAction="#goToTransferenciaCliente" text="Transferir" />
             <Button mnemonicParsing="false" onAction="#goToConsultarSaldo" text="Consultar saldo" />
-            <Button mnemonicParsing="false" text="Excluir" />
+            <Button mnemonicParsing="false" onAction="#tratarBotaoExcluir" text="Excluir" />
             <Button mnemonicParsing="false" onAction="#goToMenuPrincipal" text="Fechar" />
         </items>
       </ToolBar>

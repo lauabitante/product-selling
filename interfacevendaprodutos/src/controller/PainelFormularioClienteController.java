@@ -59,7 +59,7 @@ public class PainelFormularioClienteController implements Initializable {
             Conta conta = new Conta(Integer.parseInt(textFieldConta.getText()), 0);
             Cliente cliente = new Cliente(textFieldNome.getText(), textFieldEmail.getText(), textFieldCPF.getText(), conta);
             clienteNegocio.salvarCliente(cliente);
-            PrintUtil.printMessageSucesso("Cliente cadastrado com sucesso!");
+            PrintUtil.printMessageSuccess("Cliente cadastrado com sucesso!");
             stage.close();
         }
     }

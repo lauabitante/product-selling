@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -28,6 +29,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Cliente;
+import view.PrintUtil;
 
 /**
  * FXML Controller class
@@ -128,6 +130,18 @@ public class PainelMenuClienteController implements Initializable {
         stage.initOwner(painelMenuCliente.getScene().getWindow());
         stage.showAndWait();
 //        carregarTableViewProdutos();
+    }
+    
+    @FXML
+    public void tratarBotaoExcluir(ActionEvent event) throws IOException {
+        
+        ButtonType resultado = PrintUtil.printMessageConfirmation("Deseja realmente deletar o cliente?");
+        
+        if (resultado == ButtonType.YES) {
+            clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
+            clienteNegocio.deletarCliente(clienteSelecionado);
+            carregarTableViewClientes();
+        }
     }
 
     @FXML

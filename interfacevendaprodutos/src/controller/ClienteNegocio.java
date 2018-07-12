@@ -161,6 +161,10 @@ public class ClienteNegocio {
         }
     }
     
+    public void deletarCliente(Cliente cliente) {
+        clienteDAO.deletar(cliente);
+    }
+    
     /**
      * Solicita um depósito a partir do input do usuário
      */
