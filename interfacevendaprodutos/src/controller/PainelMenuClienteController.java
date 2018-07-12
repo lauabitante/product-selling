@@ -84,14 +84,14 @@ public class PainelMenuClienteController implements Initializable {
     }
     
     public void goToFormularioCliente(ActionEvent event) throws IOException {
-//        produtoSelecionado = null;
+        clienteSelecionado = null;
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelFormularioCliente.fxml"));
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(painelMenuCliente.getScene().getWindow());
         stage.showAndWait();
-//        carregarTableViewProdutos();
+        carregarTableViewClientes();
     }
     
     @FXML

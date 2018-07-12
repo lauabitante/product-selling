@@ -14,6 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Cliente;
+import model.Conta;
+import view.PrintUtil;
 
 /**
  * FXML Controller class
@@ -32,18 +35,33 @@ public class PainelFormularioClienteController implements Initializable {
     private TextField textFieldEmail;
     @FXML
     private TextField textFieldConta;
-    
+
+    private ClienteNegocio clienteNegocio;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
-     @FXML
+        clienteNegocio = new ClienteNegocio();
+    }
+
+    @FXML
     public void tratarBotaoSalvar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelFormularioCliente.getScene().getWindow();
+
+        if (textFieldNome.getText().isEmpty()
+                || textFieldEmail.getText().isEmpty()
+                || textFieldCPF.getText().isEmpty()
+                || textFieldConta.getText().isEmpty()) {
+            PrintUtil.printMessageError("Preencha todos os campos!");
+        } else {
+            Conta conta = new Conta(Integer.parseInt(textFieldConta.getText()), 0);
+            Cliente cliente = new Cliente(textFieldNome.getText(), textFieldEmail.getText(), textFieldCPF.getText(), conta);
+            clienteNegocio.salvarCliente(cliente);
+            PrintUtil.printMessageSucesso("Cliente cadastrado com sucesso!");
+            stage.close();
+        }
     }
 
     @FXML
@@ -51,5 +69,5 @@ public class PainelFormularioClienteController implements Initializable {
         Stage stage = (Stage) painelFormularioCliente.getScene().getWindow();
         stage.close();
     }
-    
+
 }

@@ -21,7 +21,7 @@ public class PrintUtil {
     }
 
     public static void printMessageSucesso(String msg) {
-        Alert alert = new Alert(AlertType.CONFIRMATION);
+        Alert alert = new Alert(AlertType.INFORMATION);
         alert.setContentText(msg);
         alert.showAndWait();
     }
