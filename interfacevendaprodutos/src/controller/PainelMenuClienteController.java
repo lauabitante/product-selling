@@ -120,7 +120,6 @@ public class PainelMenuClienteController implements Initializable {
     
     @FXML
     public void goToDepositoCliente(ActionEvent event) throws IOException {
-       
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
         if (clienteSelecionado != null) {
             Stage stage = new Stage();
@@ -142,14 +141,23 @@ public class PainelMenuClienteController implements Initializable {
     
     @FXML
     public void goToTransferenciaCliente(ActionEvent event) throws IOException {
-       //        produtoSelecionado = null;
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelTransferenciaCliente.fxml"));
-        stage.setScene(new Scene(root));
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.initOwner(painelMenuCliente.getScene().getWindow());
-        stage.showAndWait();
-//        carregarTableViewProdutos();
+        clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
+        if (clienteSelecionado != null) {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(Interfacevendaprodutos.class.getResource("/view/PainelTransferenciaCliente.fxml"));
+            Parent root = (Parent) loader.load();
+            
+            PainelTransferenciaClienteController controller = (PainelTransferenciaClienteController) loader.getController();
+            controller.setClienteSelecionado(clienteSelecionado);
+            
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(painelMenuCliente.getScene().getWindow());
+            stage.showAndWait();
+            
+        } else {
+            PrintUtil.printMessageError("Selecione um cliente.");
+        }
     }
     
     @FXML

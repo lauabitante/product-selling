@@ -11,8 +11,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Cliente;
+import view.PrintUtil;
 
 /**
  * FXML Controller class
@@ -23,22 +26,54 @@ public class PainelTransferenciaClienteController implements Initializable {
 
     @FXML
     private AnchorPane painelTransferenciaCliente;
+    @FXML
+    private TextField textFieldValor;
+    @FXML
+    private TextField textFieldClienteDestino;
+    
+    private Cliente clienteSelecionado;
+    private ClienteNegocio clienteNegocio;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        clienteNegocio = new ClienteNegocio();
     }    
     
     @FXML
     public void tratarBotaoTransferir(ActionEvent event) throws IOException {
+        
         Stage stage = (Stage) painelTransferenciaCliente.getScene().getWindow();
+        if (textFieldValor.getText().isEmpty() || Double.parseDouble(textFieldValor.getText()) < 1) {
+            PrintUtil.printMessageError("Valor inválido.");
+        } 
+        else if (textFieldClienteDestino.getText().isEmpty() || Integer.parseInt(textFieldClienteDestino.getText()) < 1) {
+            PrintUtil.printMessageError("Id inválido.");
+        } else {
+            Double valor = Double.parseDouble(textFieldValor.getText());
+            int codigo = Integer.parseInt(textFieldClienteDestino.getText());
+            Cliente clienteDestino = clienteNegocio.buscarPorCodigo(codigo);
+            if (clienteSelecionado.getConta().getSaldoConta() < valor) {
+                PrintUtil.printMessageError("Saldo insuficiente.");
+            }
+            else if (clienteDestino == null) {
+                PrintUtil.printMessageError("Cliente não encontrado.");
+            } else {
+                clienteNegocio.realizarTransferencia(clienteSelecionado, clienteDestino, valor);
+                PrintUtil.printMessageSuccess("Transferência realizada com sucesso!");
+                stage.close();
+            }
+        }
     }
 
     @FXML
     public void tratarBotaoCancelar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelTransferenciaCliente.getScene().getWindow();
         stage.close();
+    }
+    
+    public void setClienteSelecionado(Cliente clienteSelecionado) {
+        this.clienteSelecionado = clienteSelecionado;
     }
 }

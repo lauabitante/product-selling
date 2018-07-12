@@ -31,9 +31,14 @@ public class ClienteNegocio {
         clienteDAO.atualizar(cliente);
     }
      
-     public void atualizarSaldoCliente(Cliente cliente) {
-         clienteDAO.atualizar(cliente);
-     }
+    public void atualizarSaldoCliente(Cliente cliente) {
+        clienteDAO.atualizar(cliente);
+    }
+    
+    public Cliente buscarPorCodigo(int codigo) {
+        return clienteDAO.buscarPorID(codigo);
+    }
+    
     
     public void deletarCliente() {
         Cliente cliente = getCliente();

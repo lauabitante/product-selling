@@ -58,10 +58,6 @@ public class PainelDepositoClienteController implements Initializable {
         Stage stage = (Stage) painelDepositoCliente.getScene().getWindow();
         stage.close();
     }
-    
-    public Cliente getClienteSelecionado() {
-        return clienteSelecionado;
-    }
 
     public void setClienteSelecionado(Cliente clienteSelecionado) {
         this.clienteSelecionado = clienteSelecionado;
