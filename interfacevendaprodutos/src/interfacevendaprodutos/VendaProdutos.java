@@ -96,13 +96,13 @@ public class VendaProdutos {
 
         switch (opcao) {
             case 1:
-                clienteController.cadastrarCliente();
+//                clienteController.cadastrarCliente();
                 break;
             case 2:
-                clienteController.listarClientesAtivos();
+//                clienteController.listarClientesAtivos();
                 break;
             case 3:
-                clienteController.atualizarDadosCliente();
+//                clienteController.atualizarDadosCliente();
                 break;
             case 4:
                 clienteController.deletarCliente();

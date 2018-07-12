@@ -7,12 +7,9 @@ package controller;
 
 import dao.ClienteDAO;
 import dao.impl_BD.ClienteDAO_BD;
-import java.text.DecimalFormat;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import model.Cliente;
-import model.Conta;
 
 /**
  *
@@ -83,13 +80,13 @@ public class ClienteNegocio {
      * @param valor valor do depósito
      */
     public void realizarDeposito(Cliente c, double valor) {
-        if (valor > 0) {
+//        if (valor > 0) {
             c.getConta().depositar(valor);
             clienteDAO.atualizar(c);
-            Double saldoAtual = c.getConta().getSaldoConta();
-        } else {
-            System.out.println("\nValor inválido.");
-        }
+//            Double saldoAtual = c.getConta().getSaldoConta();
+//        } else {
+//            System.out.println("\nValor inválido.");
+//        }
     }
 
     /**
