@@ -85,6 +85,7 @@ public class PainelMenuClienteController implements Initializable {
         tableViewClientes.setItems(observableListaClientes);
     }
     
+    @FXML
     public void goToFormularioCliente(ActionEvent event) throws IOException {
         clienteSelecionado = null;
         Stage stage = new Stage();
@@ -94,6 +95,32 @@ public class PainelMenuClienteController implements Initializable {
         stage.initOwner(painelMenuCliente.getScene().getWindow());
         stage.showAndWait();
         carregarTableViewClientes();
+    }
+    
+    @FXML
+    public void goToFormularioClienteEditar(ActionEvent event) throws IOException {
+        clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
+        if (clienteSelecionado != null) {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(Interfacevendaprodutos.class.getResource("/view/PainelFormularioCliente.fxml"));
+            Parent root = (Parent) loader.load();
+
+            PainelFormularioClienteController controller = (PainelFormularioClienteController) loader.getController();
+            controller.setClienteSelecionado(clienteSelecionado);
+            
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(painelMenuCliente.getScene().getWindow());
+            stage.showAndWait();
+            carregarTableViewClientes();
+        } else {
+            PrintUtil.printMessageError("Selecione um cliente.");
+        }
+        
+        
+        
+        
+
     }
     
     @FXML
@@ -108,7 +135,7 @@ public class PainelMenuClienteController implements Initializable {
 //        carregarTableViewProdutos();
     }
     
-     @FXML
+    @FXML
     public void goToTransferenciaCliente(ActionEvent event) throws IOException {
        //        produtoSelecionado = null;
         Stage stage = new Stage();

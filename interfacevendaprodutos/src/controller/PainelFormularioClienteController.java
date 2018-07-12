@@ -37,6 +37,7 @@ public class PainelFormularioClienteController implements Initializable {
     private TextField textFieldConta;
 
     private ClienteNegocio clienteNegocio;
+    private Cliente clienteSelecionado;
 
     /**
      * Initializes the controller class.
@@ -56,10 +57,22 @@ public class PainelFormularioClienteController implements Initializable {
                 || textFieldConta.getText().isEmpty()) {
             PrintUtil.printMessageError("Preencha todos os campos!");
         } else {
-            Conta conta = new Conta(Integer.parseInt(textFieldConta.getText()), 0);
-            Cliente cliente = new Cliente(textFieldNome.getText(), textFieldEmail.getText(), textFieldCPF.getText(), conta);
-            clienteNegocio.salvarCliente(cliente);
-            PrintUtil.printMessageSuccess("Cliente cadastrado com sucesso!");
+            
+            if (clienteSelecionado == null) {
+                Conta conta = new Conta(Integer.parseInt(textFieldConta.getText()), 0);
+                Cliente cliente = new Cliente(textFieldNome.getText(), textFieldEmail.getText(), textFieldCPF.getText(), conta);
+            
+                clienteNegocio.salvarCliente(cliente);
+                PrintUtil.printMessageSuccess("Cliente cadastrado com sucesso!");
+            } else {
+                clienteSelecionado.setNome(textFieldNome.getText());
+                clienteSelecionado.setCpf(textFieldCPF.getText());
+                clienteSelecionado.setEmail(textFieldEmail.getText());
+                clienteSelecionado.getConta().setNumeroConta(Integer.parseInt(textFieldConta.getText()));
+                
+                clienteNegocio.atualizarDadosCliente(clienteSelecionado);
+                PrintUtil.printMessageSuccess("Cliente atualizado com sucesso!");
+            }
             stage.close();
         }
     }
@@ -68,6 +81,18 @@ public class PainelFormularioClienteController implements Initializable {
     public void tratarBotaoCancelar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelFormularioCliente.getScene().getWindow();
         stage.close();
+    }
+
+    public Cliente getClienteSelecionado() {
+        return clienteSelecionado;
+    }
+
+    public void setClienteSelecionado(Cliente clienteSelecionado) {
+        this.clienteSelecionado = clienteSelecionado;
+        textFieldNome.setText(clienteSelecionado.getNome());
+        textFieldCPF.setText(clienteSelecionado.getCpf());
+        textFieldEmail.setText(clienteSelecionado.getEmail());
+        textFieldConta.setText(String.valueOf(clienteSelecionado.getConta().getNumeroConta()));
     }
 
 }

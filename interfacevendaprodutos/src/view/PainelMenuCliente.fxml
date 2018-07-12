@@ -11,7 +11,7 @@
       <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
           <Button mnemonicParsing="false" onAction="#goToFormularioCliente" text="Novo" />
-            <Button mnemonicParsing="false" onAction="#goToFormularioCliente" text="Editar" />
+            <Button mnemonicParsing="false" onAction="#goToFormularioClienteEditar" text="Editar" />
             <Button mnemonicParsing="false" onAction="#goToDepositoCliente" text="Depositar" />
             <Button mnemonicParsing="false" onAction="#goToTransferenciaCliente" text="Transferir" />
             <Button mnemonicParsing="false" onAction="#goToConsultarSaldo" text="Consultar saldo" />

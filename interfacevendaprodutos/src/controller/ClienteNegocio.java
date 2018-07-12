@@ -134,6 +134,10 @@ public class ClienteNegocio {
         }
         clienteDAO.atualizar(cliente);
     }
+    
+    public void atualizarDadosCliente(Cliente cliente) {
+        clienteDAO.atualizar(cliente);
+    }
      
      public void atualizarSaldoCliente(Cliente cliente) {
          clienteDAO.atualizar(cliente);
