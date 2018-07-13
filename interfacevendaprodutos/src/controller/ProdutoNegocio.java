@@ -116,6 +116,10 @@ public class ProdutoNegocio {
         produtoDAO.atualizar(produto);
     }
     
+    public void deletar(Produto produto) {
+        produtoDAO.deletar(produto);
+    }
+    
     public void deletarProduto() {
         Produto produto = getProduto();
         Scanner scan = new Scanner(System.in);

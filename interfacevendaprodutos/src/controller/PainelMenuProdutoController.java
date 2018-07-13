@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -44,12 +45,12 @@ public class PainelMenuProdutoController implements Initializable {
     private TableColumn<Produto, String> tableColumnNome;
     @FXML
     private TableColumn<Produto, String> tableColumnPreco;
-    
+
     private List<Produto> listaProdutos;
     private Produto produtoSelecionado;
     private ObservableList<Produto> observableListaProdutos;
     private ProdutoNegocio produtoNegocio;
-    
+
     /**
      * Initializes the controller class.
      */
@@ -59,8 +60,8 @@ public class PainelMenuProdutoController implements Initializable {
         if (tableViewProdutos != null) {
             carregarTableViewProdutos();
         }
-    } 
-    
+    }
+
     private void carregarTableViewProdutos() {
         tableColumnCod.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -70,8 +71,9 @@ public class PainelMenuProdutoController implements Initializable {
 
         observableListaProdutos = FXCollections.observableArrayList(listaProdutos);
         tableViewProdutos.setItems(observableListaProdutos);
+        tableViewProdutos.refresh();
     }
-    
+
     public void goToFormularioProduto(ActionEvent event) throws IOException {
         produtoSelecionado = null;
         Stage stage = new Stage();
@@ -82,7 +84,7 @@ public class PainelMenuProdutoController implements Initializable {
         stage.showAndWait();
         carregarTableViewProdutos();
     }
-    
+
     @FXML
     public void goToFormularioProdutoEditar(ActionEvent event) throws IOException {
         produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();
@@ -98,23 +100,33 @@ public class PainelMenuProdutoController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initOwner(MenuProduto.getScene().getWindow());
             stage.showAndWait();
-            
+
             carregarTableViewProdutos();
         } else {
             PrintUtil.printMessageError("Selecione um produto.");
         }
     }
-    
+
     @FXML
     public void goToMenuPrincipal(ActionEvent event) throws IOException {
         Stage stage = (Stage) MenuProduto.getScene().getWindow();
         stage.close();
     }
-    
+
     @FXML
     public void tratarBotaoExcluir(ActionEvent event) throws IOException {
-        Stage stage = (Stage) MenuProduto.getScene().getWindow();
-        stage.close();
+        produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();
+        if (produtoSelecionado != null) {
+            ButtonType resultado = PrintUtil.printMessageConfirmation("Deseja realmente deletar o produto?");
+
+            if (resultado == ButtonType.YES) {
+                produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();
+                produtoNegocio.deletar(produtoSelecionado);
+                carregarTableViewProdutos();
+            }
+        } else {
+            PrintUtil.printMessageError("Selecione um produto.");
+        }
     }
-    
+
 }

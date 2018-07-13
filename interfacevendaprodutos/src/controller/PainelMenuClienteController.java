@@ -81,6 +81,7 @@ public class PainelMenuClienteController implements Initializable {
 
         observableListaClientes = FXCollections.observableArrayList(listaClientes);
         tableViewClientes.setItems(observableListaClientes);
+        tableViewClientes.refresh();
     }
 
     @FXML
@@ -165,10 +166,10 @@ public class PainelMenuClienteController implements Initializable {
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(Interfacevendaprodutos.class.getResource("/view/PainelSaldoCliente.fxml"));
             Parent root = (Parent) loader.load();
-            
+
             PainelSaldoClienteController controller = (PainelSaldoClienteController) loader.getController();
             controller.setClienteSelecionado(clienteSelecionado);
-            
+
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initOwner(painelMenuCliente.getScene().getWindow());
@@ -180,13 +181,17 @@ public class PainelMenuClienteController implements Initializable {
 
     @FXML
     public void tratarBotaoExcluir(ActionEvent event) throws IOException {
+        clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
+        if (clienteSelecionado != null) {
+            ButtonType resultado = PrintUtil.printMessageConfirmation("Deseja realmente deletar o cliente?");
 
-        ButtonType resultado = PrintUtil.printMessageConfirmation("Deseja realmente deletar o cliente?");
-
-        if (resultado == ButtonType.YES) {
-            clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
-            clienteNegocio.deletarCliente(clienteSelecionado);
-            carregarTableViewClientes();
+            if (resultado == ButtonType.YES) {
+                clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
+                clienteNegocio.deletarCliente(clienteSelecionado);
+                carregarTableViewClientes();
+            }
+        } else {
+            PrintUtil.printMessageError("Selecione um cliente.");
         }
     }
 
@@ -195,5 +200,4 @@ public class PainelMenuClienteController implements Initializable {
         Stage stage = (Stage) painelMenuCliente.getScene().getWindow();
         stage.close();
     }
-
 }
