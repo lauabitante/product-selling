@@ -24,8 +24,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.Cliente;
 import model.Produto;
+import view.PrintUtil;
 
 /**
  * FXML Controller class
@@ -50,7 +50,6 @@ public class PainelMenuProdutoController implements Initializable {
     private ObservableList<Produto> observableListaProdutos;
     private ProdutoNegocio produtoNegocio;
     
-    
     /**
      * Initializes the controller class.
      */
@@ -74,14 +73,36 @@ public class PainelMenuProdutoController implements Initializable {
     }
     
     public void goToFormularioProduto(ActionEvent event) throws IOException {
-//        produtoSelecionado = null;
+        produtoSelecionado = null;
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelFormularioProduto.fxml"));
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(MenuProduto.getScene().getWindow());
         stage.showAndWait();
-//        carregarTableViewProdutos();
+        carregarTableViewProdutos();
+    }
+    
+    @FXML
+    public void goToFormularioProdutoEditar(ActionEvent event) throws IOException {
+        produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();
+        if (produtoSelecionado != null) {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(Interfacevendaprodutos.class.getResource("/view/PainelFormularioProduto.fxml"));
+            Parent root = (Parent) loader.load();
+
+            PainelFormularioProdutoController controller = (PainelFormularioProdutoController) loader.getController();
+            controller.setProdutoSelecionado(produtoSelecionado);
+
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(MenuProduto.getScene().getWindow());
+            stage.showAndWait();
+            
+            carregarTableViewProdutos();
+        } else {
+            PrintUtil.printMessageError("Selecione um produto.");
+        }
     }
     
     @FXML

@@ -78,7 +78,6 @@ public class PainelMenuClienteController implements Initializable {
         tableColumnConta.setCellValueFactory(new PropertyValueFactory<>("conta"));
 
         listaClientes = clienteNegocio.listaClientesAtivos(true);
-        System.out.println(listaClientes);
 
         observableListaClientes = FXCollections.observableArrayList(listaClientes);
         tableViewClientes.setItems(observableListaClientes);

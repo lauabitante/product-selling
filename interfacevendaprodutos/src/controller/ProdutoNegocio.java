@@ -32,6 +32,10 @@ public class ProdutoNegocio {
         produtoDAO.salvar(produto);
     }
     
+    public void salvar(Produto produto) {
+        produtoDAO.salvar(produto);
+    }
+    
      public String solicitarDadoString(String mensagem) {
         Scanner scan = new Scanner(System.in);
         String dado;
@@ -105,6 +109,10 @@ public class ProdutoNegocio {
         double precoProduto = this.solicitarDadoDouble("Digite o preço do produto: ");
         produto.setNome(nomeProduto);
         produto.setPreco(precoProduto);
+        produtoDAO.atualizar(produto);
+    }
+    
+    public void atualizar(Produto produto) {
         produtoDAO.atualizar(produto);
     }
     
