@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Cliente;
 
 /**
  * FXML Controller class
@@ -30,6 +31,10 @@ public class PainelSaldoClienteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
     
+    public void setClienteSelecionado(Cliente clienteSelecionado) {
+        String valor = String.valueOf(clienteSelecionado.getConta().getSaldoConta());
+        labelValor.setText("R$ " + valor);
+    }
 }
