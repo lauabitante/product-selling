@@ -16,7 +16,7 @@ import model.Produto;
  *
  * @author lauraabitante
  */
-public class ProdutoController {
+public class ProdutoNegocio {
     
     private ProdutoDAO produtoDAO = new ProdutoDAO_BD();
 
@@ -73,6 +73,10 @@ public class ProdutoController {
         } while (dado == 9);
 
         return dado;
+    }
+     
+    public List<Produto> listar() {
+        return produtoDAO.listar();
     }
 
     /**

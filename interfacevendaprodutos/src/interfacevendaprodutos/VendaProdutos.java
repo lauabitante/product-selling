@@ -6,7 +6,7 @@
 package interfacevendaprodutos;
 
 import controller.ClienteNegocio;
-import controller.ProdutoController;
+import controller.ProdutoNegocio;
 import controller.VendaController;
 import java.time.LocalDate;
 import java.util.*;
@@ -29,9 +29,9 @@ public class VendaProdutos {
     public static ClienteNegocio clienteController = new ClienteNegocio();
 
     /**
-     * Instância da classe ProdutoController
+     * Instância da classe ProdutoNegocio
      */
-    public static ProdutoController produtoController = new ProdutoController();
+    public static ProdutoNegocio produtoController = new ProdutoNegocio();
 
     /**
      * Instância da classe VendaController
