@@ -21,5 +21,6 @@
             <TableColumn fx:id="tableColumnTotal" prefWidth="100.0" text="Total" />
          </columns>
       </TableView>
+      <Button layoutX="433.0" layoutY="359.0" mnemonicParsing="false" onAction="#goToRelatorioDetalheVenda" prefHeight="27.0" prefWidth="153.0" text="Relatório Detalhado" />
    </children>
 </AnchorPane>
