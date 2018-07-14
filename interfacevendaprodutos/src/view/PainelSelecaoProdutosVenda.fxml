@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="painelVenda" prefHeight="577.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelVendaController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="755.0">
+         <items>
+            <Label text="Seleção de Produtos" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="tableViewProdutos" layoutX="1.0" layoutY="139.0" prefHeight="143.0" prefWidth="754.0">
+        <columns>
+          <TableColumn fx:id="tableColumnCodProdutoLista" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="tableColumnNomeProdutoLista" prefWidth="303.8824691772461" text="Nome" />
+            <TableColumn fx:id="tableColumnPrecoProdutoLista" prefWidth="73.11752319335938" text="Preço" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="56.0" text="Cliente:" />
+      <Button layoutX="585.0" layoutY="289.0" mnemonicParsing="false" onAction="#tratarBotaoAdicionarNoCarrinho" text="Adicionar no Carrinho" />
+      <Separator layoutX="2.0" layoutY="82.0" prefHeight="0.0" prefWidth="750.0" />
+      <Label layoutX="12.0" layoutY="104.0" text="LISTA DE PRODUTOS" />
+      <TableView fx:id="tableViewCarrinho" layoutX="1.0" layoutY="366.0" prefHeight="143.0" prefWidth="754.0">
+         <columns>
+            <TableColumn fx:id="tableColumnCodProdutoCarrinho" prefWidth="75.0" text="Código" />
+            <TableColumn fx:id="tableColumnNomeProdutoCarrinho" prefWidth="303.8824691772461" text="Nome" />
+            <TableColumn fx:id="tableColumnPrecoProdutoCarrinho" prefWidth="73.11752319335938" text="Preço" />
+         </columns>
+      </TableView>
+      <Label layoutX="8.0" layoutY="342.0" text="CARRINHO" />
+      <Separator layoutX="2.0" layoutY="332.0" prefHeight="0.0" prefWidth="750.0" />
+      <Button layoutX="628.0" layoutY="529.0" mnemonicParsing="false" onAction="#tratarBotaoFinalizarVenda" text="Finalizar Venda" />
+      <Label fx:id="labelNomeCliente" layoutX="71.0" layoutY="56.0" prefHeight="17.0" prefWidth="213.0" text="Nome" />
+   </children>
+</AnchorPane>

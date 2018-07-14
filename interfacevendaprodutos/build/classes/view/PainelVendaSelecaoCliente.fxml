@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="painelSelecaoClientes" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelVendaSelecaoClienteController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="600.0">
+         <items>
+            <Label text="VENDA DE PRODUTOS" />
+         </items>
+      </ToolBar>
+      <Label layoutX="10.0" layoutY="52.0" text="Selecione o cliente:" />
+      <TableView fx:id="tableViewClientes" layoutY="79.0" prefHeight="274.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="tableColumnCod" prefWidth="112.48205947875977" text="Código" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="234.3869171142578" text="Nome" />
+        </columns>
+      </TableView>
+      <Button layoutX="519.0" layoutY="362.0" mnemonicParsing="false" onAction="#goToSelecaoProdutos" text="Próximo" />
+   </children>
+</AnchorPane>

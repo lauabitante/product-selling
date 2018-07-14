@@ -7,21 +7,25 @@ package controller;
 
 import dao.VendaDAO;
 import dao.impl_BD.VendaDAO_BD;
-import java.util.ArrayList;
+import static interfacevendaprodutos.VendaProdutos.vendaController;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
+import model.Cliente;
+import model.Produto;
 import model.Venda;
 
 /**
  *
  * @author lauraabitante
  */
-public class VendaController {
+public class VendaNegocio {
 
     /**
      * Lista de vendas
      */
     public VendaDAO vendaDAO = new VendaDAO_BD();
+    public Venda venda;
 
     /**
      * Lista as vendas realizadas
@@ -64,7 +68,22 @@ public class VendaController {
         } 
     }
     
-     private void separador() {
+    private void separador() {
         System.out.println("-----------------------------------------------------------------------------------------------------------------");
     }
+     
+     public void createVenda(Cliente cliente) {
+        venda = new Venda(vendaController.vendaDAO.listar().size(), LocalDate.now(), cliente);
+     }
+     
+     public void adicionarProduto(Produto produto) {
+        venda.adicionarProduto(produto);
+     }
+     
+     public void finalizarVenda() {
+        venda.getCliente().getConta().retirar(venda.getTotalVenda());
+        vendaController.salvar(venda);
+        ClienteNegocio clienteNegocio = new ClienteNegocio();
+        clienteNegocio.atualizarSaldoCliente(venda.getCliente());
+     }
 }

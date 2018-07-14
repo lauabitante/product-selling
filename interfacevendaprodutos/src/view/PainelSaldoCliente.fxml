@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" fx:id="painelSaldoCliente" prefHeight="157.0" prefWidth="289.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.PainelSaldoClienteController">
+<AnchorPane id="AnchorPane" fx:id="painelSaldoCliente" prefHeight="157.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelSaldoClienteController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="289.0">
          <items>
