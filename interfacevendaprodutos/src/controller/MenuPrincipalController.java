@@ -73,6 +73,16 @@ public class MenuPrincipalController implements Initializable {
         stage.initOwner(MenuPrincipal.getScene().getWindow());
         stage.showAndWait();
     }
+    
+        @FXML
+    public void tratarBotaoRelatorios(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelRelatorioVendas.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(MenuPrincipal.getScene().getWindow());
+        stage.showAndWait();
+    }
 
     
 }

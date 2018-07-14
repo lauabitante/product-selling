@@ -47,6 +47,10 @@ public class VendaNegocio {
         separador();
     }
     
+    public List<Venda> listar() {
+        return vendaDAO.listar();
+    }
+    
     public void salvar(Venda venda) {
         vendaDAO.salvar(venda);
     }

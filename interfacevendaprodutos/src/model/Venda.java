@@ -49,7 +49,7 @@ public class Venda {
         return dataHora;
     }
     
-     public void setDataHora(LocalDate dataHora) {
+    public void setDataHora(LocalDate dataHora) {
         this.dataHora = dataHora;
     }
 
@@ -64,6 +64,10 @@ public class Venda {
     
      public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+     
+    public String getNomeCliente() {
+        return cliente.getNome();
     }
 
     /**

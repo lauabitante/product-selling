@@ -11,7 +11,7 @@
       <Button layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onAction="#tratarBotaoCliente" prefHeight="102.0" prefWidth="164.0" text="CLIENTES" />
       <Button layoutX="183.0" layoutY="59.0" mnemonicParsing="false" onAction="#tratarBotaoProduto" prefHeight="102.0" prefWidth="164.0" text="PRODUTOS" />
       <Button layoutX="14.0" layoutY="166.0" mnemonicParsing="false" onAction="#tratarBotaoVenda" prefHeight="102.0" prefWidth="164.0" text="VENDAS" />
-      <Button layoutX="183.0" layoutY="166.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="164.0" text="RELATÓRIOS" />
+      <Button layoutX="183.0" layoutY="166.0" mnemonicParsing="false" onAction="#tratarBotaoRelatorios" prefHeight="102.0" prefWidth="164.0" text="RELATÓRIOS" />
       <Label layoutX="118.0" layoutY="14.0" text="VENDA PRODUTOS" />
    </children>
 </AnchorPane>

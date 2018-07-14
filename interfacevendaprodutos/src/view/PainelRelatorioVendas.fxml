@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="painelRelatorioVendas" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PainelRelatorioVendasController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="600.0">
+         <items>
+            <Label text="VENDAS REALIZADAS" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="tableViewVendas" layoutY="39.0" prefHeight="314.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="tableColumnCod" prefWidth="112.48205947875977" text="Código" />
+            <TableColumn fx:id="tableColumnCliente" prefWidth="234.3869171142578" text="Cliente" />
+            <TableColumn fx:id="tableColumnData" prefWidth="100.0" text="Data" />
+            <TableColumn fx:id="tableColumnTotal" prefWidth="100.0" text="Total" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
