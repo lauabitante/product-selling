@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Cliente;
 import model.Conta;
+import view.MaskFieldUtil;
 import view.PrintUtil;
 
 /**
@@ -47,6 +48,7 @@ public class PainelFormularioClienteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clienteNegocio = new ClienteNegocio();
+        MaskFieldUtil.cpfField(this.textFieldCPF);
     }
 
     /**

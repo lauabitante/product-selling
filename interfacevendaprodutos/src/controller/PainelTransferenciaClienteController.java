@@ -56,7 +56,7 @@ public class PainelTransferenciaClienteController implements Initializable {
             PrintUtil.printMessageError("Valor inválido.");
         } 
         else if (textFieldClienteDestino.getText().isEmpty() || Integer.parseInt(textFieldClienteDestino.getText()) < 1) {
-            PrintUtil.printMessageError("Id inválido.");
+            PrintUtil.printMessageError("Código de cliente inválido.");
         } else {
             Double valor = Double.parseDouble(textFieldValor.getText());
             int codigo = Integer.parseInt(textFieldClienteDestino.getText());
