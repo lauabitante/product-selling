@@ -59,6 +59,8 @@ public class PainelVendaSelecaoClienteController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -78,6 +80,11 @@ public class PainelVendaSelecaoClienteController implements Initializable {
         tableViewClientes.refresh();
     }
 
+    /**
+     * Direciona para a tela de seleção de produtos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToSelecaoProdutos(ActionEvent event) throws IOException {
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
@@ -99,15 +106,29 @@ public class PainelVendaSelecaoClienteController implements Initializable {
         }
     }
     
+    /**
+     *
+     * @param cliente
+     */
     public void setClienteSelecionado(Cliente cliente) {
         clienteSelecionado = cliente;
     }
     
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML 
     public void tratarBotaoAdicionarNoCarrinho(ActionEvent event) throws IOException {
         
     }
     
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML 
     public void tratarBotaoFinalizarVenda(ActionEvent event) throws IOException {
         

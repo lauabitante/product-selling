@@ -60,6 +60,8 @@ public class PainelRelatorioVendasController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -81,6 +83,11 @@ public class PainelRelatorioVendasController implements Initializable {
         tableViewVendas.setItems(observableListaVendas);
     }
     
+    /**
+     * Direciona para a tela de detalhe do registro de uma venda
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToRelatorioDetalheVenda(ActionEvent event) throws IOException {
         vendaSelecionada = tableViewVendas.getSelectionModel().getSelectedItem();

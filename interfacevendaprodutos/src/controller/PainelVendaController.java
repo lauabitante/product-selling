@@ -5,27 +5,21 @@
  */
 package controller;
 
-import interfacevendaprodutos.Interfacevendaprodutos;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Cliente;
 import model.Produto;
@@ -86,6 +80,8 @@ public class PainelVendaController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -122,12 +118,21 @@ public class PainelVendaController implements Initializable {
         tableViewCarrinho.setItems(observableListaCarrinho);
     }
 
+    /**
+     *
+     * @param cliente
+     */
     public void setClienteSelecionado(Cliente cliente) {
         clienteSelecionado = cliente;
         labelNomeCliente.setText(clienteSelecionado.getNome());
         vendaNegocio.createVenda(cliente);
     }
 
+    /**
+     * Adiciona um produto na lista de produtos do carrinho
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoAdicionarNoCarrinho(ActionEvent event) throws IOException {
         produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();
@@ -141,6 +146,11 @@ public class PainelVendaController implements Initializable {
         }
     }
 
+    /**
+     * Finaliza uma venda
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoFinalizarVenda(ActionEvent event) throws IOException {
         if (vendaNegocio.venda.getProdutos().size() == 0) {

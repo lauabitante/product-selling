@@ -35,12 +35,19 @@ public class PainelTransferenciaClienteController implements Initializable {
     private ClienteNegocio clienteNegocio;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clienteNegocio = new ClienteNegocio();
     }    
     
+    /**
+     * Realiza transferência entre contas de clientes
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoTransferir(ActionEvent event) throws IOException {
         
@@ -67,12 +74,21 @@ public class PainelTransferenciaClienteController implements Initializable {
         }
     }
 
+    /**
+     * Retorna ao painel principal de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoCancelar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelTransferenciaCliente.getScene().getWindow();
         stage.close();
     }
     
+    /**
+     *
+     * @param clienteSelecionado
+     */
     public void setClienteSelecionado(Cliente clienteSelecionado) {
         this.clienteSelecionado = clienteSelecionado;
     }

@@ -41,12 +41,19 @@ public class PainelFormularioClienteController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clienteNegocio = new ClienteNegocio();
     }
 
+    /**
+     * Salva um novo registro de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoSalvar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelFormularioCliente.getScene().getWindow();
@@ -77,16 +84,29 @@ public class PainelFormularioClienteController implements Initializable {
         }
     }
 
+    /**
+     * Retorna ao painel principal de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoCancelar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelFormularioCliente.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     *
+     * @return
+     */
     public Cliente getClienteSelecionado() {
         return clienteSelecionado;
     }
 
+    /**
+     *
+     * @param clienteSelecionado
+     */
     public void setClienteSelecionado(Cliente clienteSelecionado) {
         this.clienteSelecionado = clienteSelecionado;
         textFieldNome.setText(clienteSelecionado.getNome());

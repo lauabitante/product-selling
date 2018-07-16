@@ -53,6 +53,8 @@ public class PainelMenuProdutoController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -74,6 +76,11 @@ public class PainelMenuProdutoController implements Initializable {
         tableViewProdutos.refresh();
     }
 
+    /**
+     * Direciona para o formulário de cadastro de produto
+     * @param event
+     * @throws IOException
+     */
     public void goToFormularioProduto(ActionEvent event) throws IOException {
         produtoSelecionado = null;
         Stage stage = new Stage();
@@ -85,6 +92,11 @@ public class PainelMenuProdutoController implements Initializable {
         carregarTableViewProdutos();
     }
 
+    /**
+     * Direciona para o formulário de cadastro de produto para edição
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToFormularioProdutoEditar(ActionEvent event) throws IOException {
         produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();
@@ -107,12 +119,22 @@ public class PainelMenuProdutoController implements Initializable {
         }
     }
 
+    /**
+     * Retorna ao menu principal da applicação
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToMenuPrincipal(ActionEvent event) throws IOException {
         Stage stage = (Stage) MenuProduto.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Exclui um registro de produto
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoExcluir(ActionEvent event) throws IOException {
         produtoSelecionado = tableViewProdutos.getSelectionModel().getSelectedItem();

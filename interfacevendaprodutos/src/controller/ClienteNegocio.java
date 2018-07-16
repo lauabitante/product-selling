@@ -19,27 +19,51 @@ public class ClienteNegocio {
 
     private ClienteDAO clienteDAO = new ClienteDAO_BD();
     
+    /**
+     *
+     * @param cliente
+     */
     public void salvarCliente(Cliente cliente) {
         clienteDAO.salvar(cliente);
     }
     
+    /**
+     *
+     * @param ativo
+     * @return
+     */
     public List<Cliente> listaClientesAtivos(boolean ativo) {
         return clienteDAO.listar(ativo);
     }
     
+    /**
+     *
+     * @param cliente
+     */
     public void atualizarDadosCliente(Cliente cliente) {
         clienteDAO.atualizar(cliente);
     }
      
+    /**
+     *
+     * @param cliente
+     */
     public void atualizarSaldoCliente(Cliente cliente) {
         clienteDAO.atualizar(cliente);
     }
     
+    /**
+     *
+     * @param codigo
+     * @return
+     */
     public Cliente buscarPorCodigo(int codigo) {
         return clienteDAO.buscarPorID(codigo);
     }
     
-    
+    /**
+     *
+     */
     public void deletarCliente() {
         Cliente cliente = getCliente();
         Scanner scan = new Scanner(System.in);
@@ -61,6 +85,10 @@ public class ClienteNegocio {
         }
     }
     
+    /**
+     *
+     * @param cliente
+     */
     public void deletarCliente(Cliente cliente) {
         clienteDAO.deletar(cliente);
     }

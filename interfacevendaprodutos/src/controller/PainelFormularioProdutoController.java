@@ -38,12 +38,19 @@ public class PainelFormularioProdutoController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         produtoNegocio = new ProdutoNegocio();
     } 
     
+    /**
+     * Salva um novo registro de produto
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoSalvar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelFormularioProduto.getScene().getWindow();
@@ -71,12 +78,21 @@ public class PainelFormularioProdutoController implements Initializable {
         }
     }
 
+    /**
+     * Retorna ao painel principal de produto
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoCancelar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelFormularioProduto.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Seta o produto selecionado
+     * @param produtoSelecionado
+     */
     public void setProdutoSelecionado(Produto produtoSelecionado) {
         this.produtoSelecionado = produtoSelecionado;
         textFieldNome.setText(produtoSelecionado.getNome());

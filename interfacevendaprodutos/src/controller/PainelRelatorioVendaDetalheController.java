@@ -17,7 +17,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import model.Produto;
 import model.Venda;
 
@@ -28,8 +27,8 @@ import model.Venda;
  */
 public class PainelRelatorioVendaDetalheController implements Initializable {
 
-    @FXML
-    private AnchorPane painelRelatorioVendaDetalhe;
+//    @FXML
+//    private AnchorPane painelRelatorioVendaDetalhe;
     
     @FXML
     private TableView<Produto> tableViewProdutos;
@@ -58,6 +57,8 @@ public class PainelRelatorioVendaDetalheController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -77,6 +78,10 @@ public class PainelRelatorioVendaDetalheController implements Initializable {
         tableViewProdutos.setItems(observableListaProdutos);
     }
     
+    /**
+     * Seta a venda selecionada
+     * @param venda
+     */
     public void setVendaSelecionada(Venda venda) {
         vendaSelecionada = venda;
         labelNomeCliente.setText(venda.getNomeCliente());

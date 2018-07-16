@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import view.PrintUtil;
 
 /**
  * FXML Controller class
@@ -31,11 +30,6 @@ public class MenuPrincipalController implements Initializable {
      * Initializes the controller class.
      */
     
-//    @FXML
-//    private VBox painelMenuCliente;
-//    @FXML
-//    private AnchorPane painelMenuCliente;
-    
     @FXML
     private AnchorPane MenuPrincipal;
     
@@ -44,6 +38,11 @@ public class MenuPrincipalController implements Initializable {
         // TODO
     }    
     
+    /**
+     * Acesso ao painel de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoCliente(ActionEvent event) throws IOException {
         Stage stage = new Stage();
@@ -54,6 +53,11 @@ public class MenuPrincipalController implements Initializable {
         stage.showAndWait();
     }
 
+    /**
+     * Acesso ao painel de produto
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoProduto(ActionEvent event) throws IOException {
         Stage stage = new Stage();
@@ -64,6 +68,11 @@ public class MenuPrincipalController implements Initializable {
         stage.showAndWait();
     }
     
+    /**
+     * Acesso ao painel de venda
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoVenda(ActionEvent event) throws IOException {
         Stage stage = new Stage();
@@ -74,7 +83,12 @@ public class MenuPrincipalController implements Initializable {
         stage.showAndWait();
     }
     
-        @FXML
+    /**
+     * Acesso ao painel de relatório de venda
+     * @param event
+     * @throws IOException
+     */
+    @FXML
     public void tratarBotaoRelatorios(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(Interfacevendaprodutos.class.getResource("/view/PainelRelatorioVendas.fxml"));
@@ -83,6 +97,5 @@ public class MenuPrincipalController implements Initializable {
         stage.initOwner(MenuPrincipal.getScene().getWindow());
         stage.showAndWait();
     }
-
     
 }

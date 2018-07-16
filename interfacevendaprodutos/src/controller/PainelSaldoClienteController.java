@@ -10,7 +10,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
 
@@ -27,12 +26,18 @@ public class PainelSaldoClienteController implements Initializable {
     private Label labelValor;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }   
     
+    /**
+     * Seta cliente selecionado
+     * @param clienteSelecionado
+     */
     public void setClienteSelecionado(Cliente clienteSelecionado) {
         String valor = String.valueOf(clienteSelecionado.getConta().getSaldoConta());
         labelValor.setText("R$ " + valor);

@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +25,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import model.Cliente;
 import view.PrintUtil;
 
@@ -61,6 +58,8 @@ public class PainelMenuClienteController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -84,6 +83,11 @@ public class PainelMenuClienteController implements Initializable {
         tableViewClientes.refresh();
     }
 
+    /**
+     * Direciona para o formulário de cadastro de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToFormularioCliente(ActionEvent event) throws IOException {
         clienteSelecionado = null;
@@ -96,6 +100,11 @@ public class PainelMenuClienteController implements Initializable {
         carregarTableViewClientes();
     }
 
+    /**
+     * Direciona para o formulário de cliente para edição do registro
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToFormularioClienteEditar(ActionEvent event) throws IOException {
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
@@ -117,6 +126,11 @@ public class PainelMenuClienteController implements Initializable {
         }
     }
 
+    /**
+     * Direciona para a tela de depósito na conta de um cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToDepositoCliente(ActionEvent event) throws IOException {
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
@@ -138,6 +152,11 @@ public class PainelMenuClienteController implements Initializable {
         }
     }
 
+    /**
+     * Direciona para a tela de transferência entre contas de clientes
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToTransferenciaCliente(ActionEvent event) throws IOException {
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
@@ -159,6 +178,11 @@ public class PainelMenuClienteController implements Initializable {
         }
     }
 
+    /**
+     * Direciona para tela de visualização de saldo da conta de um cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToConsultarSaldo(ActionEvent event) throws IOException {
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
@@ -179,6 +203,11 @@ public class PainelMenuClienteController implements Initializable {
         }
     }
 
+    /**
+     * Exclui um registro de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoExcluir(ActionEvent event) throws IOException {
         clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
@@ -195,6 +224,11 @@ public class PainelMenuClienteController implements Initializable {
         }
     }
 
+    /**
+     * Retorna ao menu principal da aplicação
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void goToMenuPrincipal(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelMenuCliente.getScene().getWindow();

@@ -34,12 +34,19 @@ public class PainelDepositoClienteController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clienteNegocio = new ClienteNegocio();
     }    
     
+    /**
+     * Realiza depósito na conta de um cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoDepositar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelDepositoCliente.getScene().getWindow();
@@ -53,12 +60,21 @@ public class PainelDepositoClienteController implements Initializable {
         }
     }
 
+    /**
+     * Retorna ao painel principal de cliente
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void tratarBotaoCancelar(ActionEvent event) throws IOException {
         Stage stage = (Stage) painelDepositoCliente.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Seta o cliente selecionado
+     * @param clienteSelecionado
+     */
     public void setClienteSelecionado(Cliente clienteSelecionado) {
         this.clienteSelecionado = clienteSelecionado;
     }
