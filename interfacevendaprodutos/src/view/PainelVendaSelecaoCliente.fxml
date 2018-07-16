@@ -14,7 +14,7 @@
          </items>
       </ToolBar>
       <Label layoutX="10.0" layoutY="52.0" text="Selecione o cliente:" />
-      <TableView fx:id="tableViewClientes" layoutY="79.0" prefHeight="274.0" prefWidth="600.0">
+      <TableView fx:id="tableViewClientes" layoutX="3.0" layoutY="78.0" prefHeight="274.0" prefWidth="594.0">
         <columns>
           <TableColumn fx:id="tableColumnCod" prefWidth="112.48205947875977" text="Código" />
           <TableColumn fx:id="tableColumnNome" prefWidth="234.3869171142578" text="Nome" />

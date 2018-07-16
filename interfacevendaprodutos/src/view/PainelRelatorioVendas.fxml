@@ -13,7 +13,7 @@
             <Label text="VENDAS REALIZADAS" />
          </items>
       </ToolBar>
-      <TableView fx:id="tableViewVendas" layoutY="39.0" prefHeight="314.0" prefWidth="600.0">
+      <TableView fx:id="tableViewVendas" layoutX="3.0" layoutY="43.0" prefHeight="316.0" prefWidth="594.0">
          <columns>
             <TableColumn fx:id="tableColumnCod" prefWidth="112.48205947875977" text="Código" />
             <TableColumn fx:id="tableColumnCliente" prefWidth="234.3869171142578" text="Cliente" />
@@ -21,6 +21,6 @@
             <TableColumn fx:id="tableColumnTotal" prefWidth="100.0" text="Total" />
          </columns>
       </TableView>
-      <Button layoutX="433.0" layoutY="359.0" mnemonicParsing="false" onAction="#goToRelatorioDetalheVenda" prefHeight="27.0" prefWidth="153.0" text="Relatório Detalhado" />
+      <Button layoutX="442.0" layoutY="366.0" mnemonicParsing="false" onAction="#goToRelatorioDetalheVenda" prefHeight="27.0" prefWidth="153.0" text="Relatório Detalhado" />
    </children>
 </AnchorPane>

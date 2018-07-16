@@ -18,8 +18,9 @@
       </ToolBar>
       <TextField fx:id="textFieldCod" layoutX="114.0" layoutY="71.0" />
       <TextField fx:id="textFieldNome" layoutX="114.0" layoutY="107.0" />
-      <TextField fx:id="textFieldPreco" layoutX="114.0" layoutY="143.0" />
+      <TextField fx:id="textFieldPreco" layoutX="138.0" layoutY="143.0" prefHeight="27.0" prefWidth="143.0" />
       <Button layoutX="63.0" layoutY="208.0" mnemonicParsing="false" onAction="#tratarBotaoSalvar" prefHeight="27.0" prefWidth="88.0" text="SALVAR" />
       <Button layoutX="174.0" layoutY="208.0" mnemonicParsing="false" onAction="#tratarBotaoCancelar" text="CANCELAR" />
+      <Label layoutX="114.0" layoutY="148.0" text="R$" />
    </children>
 </AnchorPane>
