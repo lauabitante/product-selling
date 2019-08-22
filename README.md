@@ -1,5 +1,7 @@
 # Product Selling Simulator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This project was created to simulate a system where you can register products and customers, create orders by adding products to a cart, manage products stock as well as generate a bunch of different reports.
 
 This project is using the [MVC pattern](https://pt.wikipedia.org/wiki/MVC) in order to have a better separation of concerns
